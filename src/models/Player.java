@@ -1,5 +1,9 @@
 package models;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
+
 public class Player {
 
     private String firstName;
@@ -17,12 +21,11 @@ public class Player {
      * @param position
      */
     public Player(String firstName, String lastName, int height, int weight, String position){
-        setFirstName(firstName);
-        setLastName(lastName);
+        setFirstName(firstName.trim());
+        setLastName(lastName.trim());
         setHeight(height);
         setWeight(weight);
-
-        setPosition(position);
+        setPosition(position.trim());
     }
 
     public String getFirstName() {
@@ -30,7 +33,13 @@ public class Player {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        firstName = firstName.trim();
+        if(firstName.isEmpty()) {
+            throw new IllegalArgumentException("You must input a name to continue");
+        }
+        else {
+            this.firstName = firstName;
+        }
     }
 
     public String getLastName() {
@@ -38,7 +47,13 @@ public class Player {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        lastName = lastName.trim();
+        if(lastName.isEmpty()) {
+            throw new IllegalArgumentException("You must input a name to continue");
+        }
+        else {
+            this.lastName = lastName;
+        }
     }
 
     public int getHeight() {
@@ -46,7 +61,12 @@ public class Player {
     }
 
     public void setHeight(int height) {
-        this.height = height;
+        if (height > 0 && height <= 250) {
+            this.height = height;
+        }
+        else {
+            throw new IllegalArgumentException("The max height you can input for a player is 250cm");
+        }
     }
 
     public int getWeight() {
@@ -54,7 +74,12 @@ public class Player {
     }
 
     public void setWeight(int weight) {
-        this.weight = weight;
+        if(weight > 0 && weight < 300) {
+            this.weight = weight;
+        }
+        else {
+            throw new IllegalArgumentException("Your player must be smaller than 300lbs");
+        }
     }
 
     public String getPosition() {
@@ -62,6 +87,16 @@ public class Player {
     }
 
     public void setPosition(String position) {
-        this.position = position;
+        position = position.toLowerCase();
+        if(getValidPositions().contains(position)) {
+            this.position = position;
+        }
+        else {
+            throw new IllegalArgumentException("Your position must be one of the following " + getValidPositions() + ".");
+        }
+    }
+
+    public static List<String> getValidPositions() {
+        return Arrays.asList("point guard", "shooting guard", "small forward", "power forward", "centre", "pg", "sg", "sf", "pf", "c");
     }
 }
