@@ -99,4 +99,8 @@ public class Player {
     public static List<String> getValidPositions() {
         return Arrays.asList("point guard", "shooting guard", "small forward", "power forward", "centre", "pg", "sg", "sf", "pf", "c");
     }
+
+    public String toString() {
+        return firstName + " " + lastName + "\nHeight: " + height + " cm \nWeight: " + weight + " lbs \nPosition: " + position;
+    }
 }
