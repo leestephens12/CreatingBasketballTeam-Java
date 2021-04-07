@@ -25,7 +25,12 @@ public class Coach {
         if (firstName.isEmpty()) {
             throw new IllegalArgumentException("You must input a name to continue");
         } else {
-            this.firstName = firstName;
+            if(firstName.length() > 2 && firstName.length() < 30) {
+                this.firstName = firstName;
+            }
+            else {
+                throw new IllegalArgumentException("Team location should be within the range of 2 to 30 characters");
+            }
         }
     }
 
@@ -39,7 +44,12 @@ public class Coach {
             throw new IllegalArgumentException("You must input a name to continue");
         }
         else {
-            this.lastName = lastName;
+            if(lastName.length() > 2 && lastName.length() < 30) {
+                this.lastName = lastName;
+            }
+            else {
+                throw new IllegalArgumentException("Team location should be within the range of 2 to 30 characters");
+            }
         }
     }
 
