@@ -71,11 +71,15 @@ public class Coach {
     }
 
     public void setCoachingPosition(String coachingPosition) {
-        if(getValidCoachingPositions().contains(coachingPosition.toLowerCase())) {
-            this.coachingPosition = coachingPosition;
+        if(coachingPosition.isEmpty()) {
+            throw new IllegalArgumentException("Coaching position cannot be empty");
         }
         else {
-            throw new IllegalArgumentException("Your coaching position must be one of the following: " + getValidCoachingPositions() + ".");
+            if (getValidCoachingPositions().contains(coachingPosition.toLowerCase())) {
+                this.coachingPosition = coachingPosition;
+            } else {
+                throw new IllegalArgumentException("Your coaching position must be one of the following: " + getValidCoachingPositions() + ".");
+            }
         }
     }
 

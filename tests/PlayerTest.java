@@ -1,10 +1,7 @@
-import models.Coach;
 import models.Player;
-import models.Team;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.util.ArrayList;
 
 public class PlayerTest {
     private Player kyleLowry;
@@ -36,6 +33,11 @@ public class PlayerTest {
     }
 
     @Test
+    void setFirstNameSpaced() {
+        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setFirstName(" K "));
+    }
+
+    @Test
     void setLastName() {
         assertEquals("Lowry", kyleLowry.getLastName());
     }
@@ -54,6 +56,11 @@ public class PlayerTest {
     @Test
     void setLastNameLong() {
         assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setLastName("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"));
+    }
+
+    @Test
+    void setLastNameSpaced() {
+        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setLastName(" K "));
     }
 
     @Test
@@ -99,5 +106,10 @@ public class PlayerTest {
     @Test
     void setPositionEmpty() {
         assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setPosition(""));
+    }
+
+    @Test
+    void setPositionSpaced() {
+        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setPosition(" p "));
     }
 }

@@ -48,6 +48,11 @@ public class TeamTest {
     }
 
     @Test
+    void setTeamNameSpaced() {
+        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamName(" G "));
+    }
+
+    @Test
     void setTeamLocationEmpty() {
         assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamLocation(""));
     }
@@ -60,6 +65,11 @@ public class TeamTest {
     @Test
     void setTeamLocationLong() {
         assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamLocation("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"));
+    }
+
+    @Test
+    void setTeamLocationSpaced() {
+        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamLocation(" S "));
     }
 
     @Test
