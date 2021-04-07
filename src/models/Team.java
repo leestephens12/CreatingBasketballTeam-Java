@@ -8,15 +8,13 @@ public class Team {
     ArrayList<Coach> coaches;
     private String teamName;
     private String teamLocation;
-    private Image teamLogo;
 
 
-    public Team(String teamName, String teamLocation, Image teamLogo) {
+    public Team(String teamName, String teamLocation) {
         players = new ArrayList<Player>();
         coaches = new ArrayList<Coach>();
         setTeamName(teamName.trim());
         setTeamLocation(teamLocation.trim());
-        setTeamLogo(teamLogo);
     }
 
 
@@ -64,14 +62,6 @@ public class Team {
                 throw new IllegalArgumentException("Team location should be within the range of 2 to 30 characters");
             }
         }
-    }
-
-    public Image getTeamLogo() {
-        return teamLogo;
-    }
-
-    public void setTeamLogo(Image teamLogo) {
-        this.teamLogo = teamLogo;
     }
 
     public String getPlayerNames() {
