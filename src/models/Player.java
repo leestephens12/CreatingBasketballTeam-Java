@@ -71,7 +71,7 @@ public class Player {
     }
 
     public void setHeight(int height) {
-        if (height > 0 && height <= 250) {
+        if (height > 100 && height <= 250) {
             this.height = height;
         }
         else {
@@ -84,7 +84,7 @@ public class Player {
     }
 
     public void setWeight(int weight) {
-        if(weight > 0 && weight < 300) {
+        if(weight > 75 && weight < 300) {
             this.weight = weight;
         }
         else {
@@ -98,11 +98,15 @@ public class Player {
 
     public void setPosition(String position) {
         position = position.toLowerCase();
-        if(getValidPositions().contains(position)) {
-            this.position = position;
+        if(position.isEmpty()) {
+            throw new IllegalArgumentException("Positions cannot be empty");
         }
         else {
-            throw new IllegalArgumentException("Your position must be one of the following " + getValidPositions() + ".");
+            if (getValidPositions().contains(position)) {
+                this.position = position;
+            } else {
+                throw new IllegalArgumentException("Your position must be one of the following " + getValidPositions() + ".");
+            }
         }
     }
 
