@@ -8,7 +8,7 @@ public class PlayerTest {
 
     @BeforeEach
     void setUp() {
-        kyleLowry = new Player("Kyle", "Lowry", 179, 225, "pg");
+        kyleLowry = new Player("Kyle", "Lowry", 179, 225, "PG");
     }
 
     @Test
@@ -95,7 +95,7 @@ public class PlayerTest {
 
     @Test
     void setPosition() {
-        assertEquals("pg", kyleLowry.getPosition());
+        assertEquals("PG", kyleLowry.getPosition());
     }
 
     @Test

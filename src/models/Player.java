@@ -1,5 +1,7 @@
 package models;
 
+import utilities.DButility;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -97,21 +99,17 @@ public class Player {
     }
 
     public void setPosition(String position) {
-        position = position.toLowerCase();
+        position = position.toUpperCase();
         if(position.isEmpty()) {
             throw new IllegalArgumentException("Positions cannot be empty");
         }
         else {
-            if (getValidPositions().contains(position)) {
+            if (DButility.getValidPositions().contains(position)) {
                 this.position = position;
             } else {
-                throw new IllegalArgumentException("Your position must be one of the following " + getValidPositions() + ".");
+                throw new IllegalArgumentException("Your position must be one of the following " + DButility.getValidPositions() + ".");
             }
         }
-    }
-
-    public static List<String> getValidPositions() {
-        return Arrays.asList("point guard", "shooting guard", "small forward", "power forward", "centre", "pg", "sg", "sf", "pf", "c");
     }
 
     public String toString() {

@@ -1,5 +1,7 @@
 package models;
 
+import utilities.DButility;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -75,16 +77,12 @@ public class Coach {
             throw new IllegalArgumentException("Coaching position cannot be empty");
         }
         else {
-            if (getValidCoachingPositions().contains(coachingPosition.toLowerCase())) {
+            if (DButility.getValidCoachingPositions().contains(coachingPosition.toLowerCase())) {
                 this.coachingPosition = coachingPosition;
             } else {
-                throw new IllegalArgumentException("Your coaching position must be one of the following: " + getValidCoachingPositions() + ".");
+                throw new IllegalArgumentException("Your coaching position must be one of the following: " + DButility.getValidCoachingPositions() + ".");
             }
         }
-    }
-
-    public static List<String> getValidCoachingPositions() {
-        return Arrays.asList("head coach", "assistant coach", "trainer");
     }
 
     public String toString() {
