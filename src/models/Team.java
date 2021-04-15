@@ -4,15 +4,13 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Team {
-    ArrayList<Player> players;
-    ArrayList<Coach> coaches;
+    public static ArrayList<Player> players = new ArrayList<>();
+    public static ArrayList<Coach> coaches = new ArrayList<>();
     private String teamName;
     private String teamLocation;
 
 
     public Team(String teamName, String teamLocation) {
-        players = new ArrayList<Player>();
-        coaches = new ArrayList<Coach>();
         setTeamName(teamName.trim());
         setTeamLocation(teamLocation.trim());
     }

@@ -77,12 +77,20 @@ public class Coach {
             throw new IllegalArgumentException("Coaching position cannot be empty");
         }
         else {
-            if (DButility.getValidCoachingPositions().contains(coachingPosition.toLowerCase())) {
+            if (getValidCoachingPositions().contains(coachingPosition.toLowerCase())) {
                 this.coachingPosition = coachingPosition;
             } else {
-                throw new IllegalArgumentException("Your coaching position must be one of the following: " + DButility.getValidCoachingPositions() + ".");
+                throw new IllegalArgumentException("Your coaching position must be one of the following: " + getValidCoachingPositions() + ".");
             }
         }
+    }
+
+    /**
+     *
+     * @return valid list for coaching positions
+     */
+    public static List<String> getValidCoachingPositions() {
+        return Arrays.asList("head coach", "assistant coach", "trainer");
     }
 
     public String toString() {

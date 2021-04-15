@@ -69,7 +69,7 @@ public class addPlayerController implements Initializable {
         lblError.setText("");
         try {
             Player newPlayer = new Player(txtFirstName.getText(), txtLastName.getText(), Integer.parseInt(txtHeight.getText()), Integer.parseInt(txtWeight.getText()), cmbPosition.getValue());
-            DButility.players.add(newPlayer);
+            Team.players.add(newPlayer);
 
             Parent root = FXMLLoader.load(getClass().getResource("../views/teamRosterView.fxml"));
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();

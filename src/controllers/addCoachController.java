@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.Coach;
 import models.Player;
+import models.Team;
 import utilities.DButility;
 
 import java.io.IOException;
@@ -58,7 +59,7 @@ public class addCoachController implements Initializable {
     private void addNewCoach(ActionEvent event) {
         try {
             Coach newCoach = new Coach(txtFirstName.getText(), txtLastName.getText(), cmbPosition.getValue(), Integer.parseInt(txtExperience.getText()));
-            DButility.coaches.add(newCoach);
+            Team.coaches.add(newCoach);
 
             Parent root = FXMLLoader.load(getClass().getResource("../views/teamRosterView.fxml"));
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();

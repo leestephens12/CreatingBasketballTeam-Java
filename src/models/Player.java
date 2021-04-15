@@ -104,12 +104,20 @@ public class Player {
             throw new IllegalArgumentException("Positions cannot be empty");
         }
         else {
-            if (DButility.getValidPositions().contains(position)) {
+            if (getValidPositions().contains(position)) {
                 this.position = position;
             } else {
-                throw new IllegalArgumentException("Your position must be one of the following " + DButility.getValidPositions() + ".");
+                throw new IllegalArgumentException("Your position must be one of the following " + getValidPositions() + ".");
             }
         }
+    }
+
+    /**
+     *
+     * @return list of valid positions for players
+     */
+    public static List<String> getValidPositions() {
+        return Arrays.asList("PG", "SG", "SF", "PF", "C");
     }
 
     public String toString() {

@@ -11,6 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import models.Coach;
 import models.Player;
+import models.Team;
 import utilities.DButility;
 
 import javafx.event.ActionEvent;
@@ -38,8 +39,8 @@ public class teamRosterController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lstViewPlayers.getItems().addAll(DButility.players);
-        lstViewCoaches.getItems().addAll(DButility.coaches);
+        lstViewPlayers.getItems().addAll(Team.players);
+        lstViewCoaches.getItems().addAll(Team.coaches);
     }
 
     @FXML
