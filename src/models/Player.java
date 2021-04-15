@@ -40,11 +40,11 @@ public class Player {
             throw new IllegalArgumentException("You must input a name to continue");
         }
         else {
-            if(firstName.length() > 2 && firstName.length() < 30) {
+            if(firstName.length() > 1 && firstName.length() < 30) {
                 this.firstName = firstName;
             }
             else {
-                throw new IllegalArgumentException("Team location should be within the range of 2 to 30 characters");
+                throw new IllegalArgumentException("First name should be within the range of 2 to 30 characters");
             }
         }
     }
