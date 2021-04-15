@@ -1,10 +1,7 @@
 package models;
 
-import utilities.DButility;
-
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 public class Player {
 
@@ -36,7 +33,7 @@ public class Player {
 
     public void setFirstName(String firstName) {
         firstName = firstName.trim();
-        if(firstName.isEmpty()) {
+        if(firstName.isEmpty() || firstName == null || firstName == "") {
             throw new IllegalArgumentException("You must input a name to continue");
         }
         else {
@@ -55,15 +52,15 @@ public class Player {
 
     public void setLastName(String lastName) {
         lastName = lastName.trim();
-        if(lastName.isEmpty()) {
+        if(lastName.isEmpty() || lastName == null || lastName == "") {
             throw new IllegalArgumentException("You must input a name to continue");
         }
         else {
-            if(lastName.length() > 2 && lastName.length() < 30) {
+            if(lastName.length() > 1 && lastName.length() < 30) {
                 this.lastName = lastName;
             }
             else {
-                throw new IllegalArgumentException("Team location should be within the range of 2 to 30 characters");
+                throw new IllegalArgumentException("Last Name should be within the range of 2 to 30 characters");
             }
         }
     }
@@ -73,11 +70,11 @@ public class Player {
     }
 
     public void setHeight(int height) {
-        if (height > 100 && height <= 250) {
+        if (height > 25 && height <= 300) {
             this.height = height;
         }
         else {
-            throw new IllegalArgumentException("The max height you can input for a player is 250cm");
+            throw new IllegalArgumentException("Height Must be between 25-300cm");
         }
     }
 
@@ -86,11 +83,11 @@ public class Player {
     }
 
     public void setWeight(int weight) {
-        if(weight > 75 && weight < 300) {
+        if(weight > 25 && weight < 400) {
             this.weight = weight;
         }
         else {
-            throw new IllegalArgumentException("Your player must be smaller than 300lbs");
+            throw new IllegalArgumentException("weight must be between 25-400lbs");
         }
     }
 

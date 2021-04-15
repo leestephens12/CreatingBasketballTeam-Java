@@ -58,6 +58,6 @@
          </children>
       </VBox>
       <Button layoutX="14.0" layoutY="191.0" mnemonicParsing="false" onAction="#addNewCoach" text="Add" />
-      <Button layoutX="65.0" layoutY="191.0" mnemonicParsing="false" text="Clear" />
+      <Button layoutX="65.0" layoutY="191.0" mnemonicParsing="false" onAction="#clearInformation" text="Clear" />
    </children>
 </AnchorPane>

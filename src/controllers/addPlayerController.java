@@ -12,13 +12,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.Player;
 import models.Team;
-import utilities.DButility;
 
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class addPlayerController implements Initializable {
@@ -61,7 +59,8 @@ public class addPlayerController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cmbPosition.getItems().addAll("PG", "SG","SF", "PF", "C");
+        cmbPosition.getItems().addAll(Player.getValidPositions());
+        cmbPosition.setValue("PG");
     }
 
     @FXML
@@ -80,5 +79,14 @@ public class addPlayerController implements Initializable {
         catch(IllegalArgumentException | IOException e) {
             lblError.setText(e.getMessage());
         }
+    }
+
+    @FXML
+    private void clearInformation(ActionEvent event) {
+        txtFirstName.setText("");
+        txtLastName.setText("");
+        txtHeight.setText("");
+        txtWeight.setText("");
+        cmbPosition.setValue("PG");
     }
 }

@@ -12,13 +12,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.Coach;
-import models.Player;
 import models.Team;
-import utilities.DButility;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class addCoachController implements Initializable {
@@ -52,7 +49,8 @@ public class addCoachController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cmbPosition.getItems().addAll("head coach", "assistant coach", "trainer");
+        cmbPosition.getItems().addAll(Coach.getValidCoachingPositions());
+        cmbPosition.setValue("head coach");
     }
 
     @FXML
@@ -69,5 +67,13 @@ public class addCoachController implements Initializable {
         }
         catch(IllegalArgumentException | IOException e) {
         }
+    }
+
+    @FXML
+    private void clearInformation(ActionEvent event) {
+        txtFirstName.setText("");
+        txtLastName.setText("");
+        txtExperience.setText("");
+        cmbPosition.setValue("head coach");
     }
 }

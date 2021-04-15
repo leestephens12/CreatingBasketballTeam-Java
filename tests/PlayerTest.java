@@ -19,12 +19,12 @@ public class PlayerTest {
     @Test
     void setFirstNameEmpty()
     {
-        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setFirstName(""));
+        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setFirstName("K"));
     }
 
     @Test
     void setFirstNameShort() {
-        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setFirstName("K"));
+        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setFirstName(""));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class PlayerTest {
 
     @Test
     void setHeightTall() {
-        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setHeight(300));
+        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setHeight(500));
     }
 
     @Test
@@ -84,12 +84,12 @@ public class PlayerTest {
     }
 
     @Test
-    void setWeightTall() {
-        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setWeight(350));
+    void setWeightHeavy() {
+        assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setWeight(500));
     }
 
     @Test
-    void setWeightShort() {
+    void setWeightSmall() {
         assertThrows(IllegalArgumentException.class, ()-> kyleLowry.setWeight(25));
     }
 
