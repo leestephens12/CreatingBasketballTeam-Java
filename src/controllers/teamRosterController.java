@@ -39,7 +39,7 @@ public class teamRosterController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lstViewPlayers.getItems().addAll(DButility.players);
-        lstViewCoaches.getItems().addAll(DButility.getCoachDB());
+        lstViewCoaches.getItems().addAll(DButility.coaches);
     }
 
     @FXML
@@ -47,6 +47,15 @@ public class teamRosterController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("../views/addPlayer.fxml"));
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         primaryStage.setTitle("Add Player");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
+
+    @FXML
+    private void addCoachbtn(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../views/addCoach.fxml"));
+        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        primaryStage.setTitle("Add Coach");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }

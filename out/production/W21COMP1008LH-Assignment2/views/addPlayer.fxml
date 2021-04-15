@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="348.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.addPlayerController">
+   <children>
+      <Label fx:id="lblAddPlayer" layoutX="14.0" layoutY="24.0" text="Add New Player">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="13.0" layoutY="69.0">
+         <children>
+            <Label fx:id="lblFirstName" text="First name:">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblLastName" text="Last name:">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblHeight" text="Height(cm):">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblWeight" text="Weight(lbs):">
+               <VBox.margin>
+                  <Insets top="18.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblPosition" text="Position:">
+               <VBox.margin>
+                  <Insets top="17.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="88.0" layoutY="65.0">
+         <children>
+            <TextField fx:id="txtFirstName" promptText="First Name">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtLastName" promptText="Last Name">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtHeight" promptText="cm">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtWeight" promptText="lbs">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <ComboBox fx:id="cmbPosition" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </ComboBox>
+         </children>
+      </VBox>
+      <Button layoutX="13.0" layoutY="249.0" mnemonicParsing="false" onAction="#addNewPlayer" text="Add" />
+      <Button layoutX="77.0" layoutY="249.0" mnemonicParsing="false" text="Clear" />
+      <Label fx:id="lblError" layoutX="154.0" layoutY="253.0" text="label" />
+   </children>
+</AnchorPane>

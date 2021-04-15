@@ -32,16 +32,5 @@ public class DButility {
         return Arrays.asList("head coach", "assistant coach", "trainer");
     }
 
-    /**
-     *
-     * @return list of coaches to populate my coaches text area on GUI
-     */
-    public static ArrayList<Coach> getCoachDB() {
-        ArrayList<Coach> coaches = new ArrayList<>();
-        coaches.add(new Coach("Nick", "Nurse", "head coach", 3));
-        coaches.add(new Coach("Dwayne", "Casey", "assistant coach", 10));
-        coaches.add(new Coach("Adrian", "Griffin", "trainer", 4));
-        return coaches;
-    }
 
 }

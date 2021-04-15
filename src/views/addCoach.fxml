@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="260.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.addCoachController">
+   <children>
+      <Label fx:id="lblAddCoach" layoutX="14.0" layoutY="14.0" text="Add a Coach">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="14.0" layoutY="51.0">
+         <children>
+            <Label fx:id="lblFirstName" prefHeight="8.0" prefWidth="58.0" text="First name:" />
+            <Label fx:id="lblLastName" text="Last name:">
+               <VBox.margin>
+                  <Insets top="23.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblCoachingPosition" text="Coaching Position:">
+               <VBox.margin>
+                  <Insets top="21.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblYearsOfExperience" text="Years of experience:">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="127.0" layoutY="51.0">
+         <children>
+            <TextField fx:id="txtFirstName" />
+            <TextField fx:id="txtLastName">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <ComboBox fx:id="cmbPosition" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </ComboBox>
+            <TextField fx:id="txtExperience">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+      </VBox>
+      <Button layoutX="14.0" layoutY="191.0" mnemonicParsing="false" onAction="#addNewCoach" text="Add" />
+      <Button layoutX="65.0" layoutY="191.0" mnemonicParsing="false" text="Clear" />
+   </children>
+</AnchorPane>
