@@ -108,6 +108,6 @@ public class Coach {
     }
 
     public String toString() {
-        return firstName + " " + lastName + "\nCoaching Position: " + coachingPosition;
+        return firstName + " " + lastName + "\nCoaching Position: " + coachingPosition+ "\nYears Coached: " + yearsExperience;
     }
 }
