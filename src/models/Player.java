@@ -12,7 +12,6 @@ public class Player {
     private String position;
 
     /**
-     *
      * @param firstName
      * @param lastName
      * @param height
@@ -33,7 +32,7 @@ public class Player {
 
     public void setFirstName(String firstName) {
         firstName = firstName.trim();
-        if(firstName.isEmpty() || firstName == null || firstName == "") {
+        if(firstName.isEmpty()) {
             throw new IllegalArgumentException("You must input a name to continue");
         }
         else {
@@ -52,7 +51,7 @@ public class Player {
 
     public void setLastName(String lastName) {
         lastName = lastName.trim();
-        if(lastName.isEmpty() || lastName == null || lastName == "") {
+        if(lastName.isEmpty()) {
             throw new IllegalArgumentException("You must input a name to continue");
         }
         else {
@@ -110,7 +109,6 @@ public class Player {
     }
 
     /**
-     *
      * @return list of valid positions for players
      */
     public static List<String> getValidPositions() {

@@ -39,8 +39,8 @@
       </VBox>
       <VBox layoutX="127.0" layoutY="51.0">
          <children>
-            <TextField fx:id="txtFirstName" />
-            <TextField fx:id="txtLastName">
+            <TextField fx:id="txtFirstName" promptText="First Name" />
+            <TextField fx:id="txtLastName" promptText="Last Name">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
@@ -50,7 +50,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </ComboBox>
-            <TextField fx:id="txtExperience">
+            <TextField fx:id="txtExperience" promptText="Years">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>

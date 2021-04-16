@@ -10,6 +10,7 @@ import models.Player;
 
 public class Main extends Application {
 
+    //Creating starting form the team roster page
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../views/teamRosterView.fxml"));

@@ -9,6 +9,12 @@ public class Coach {
     private int yearsExperience;
     private String coachingPosition;
 
+    /**]
+     * @param firstName
+     * @param lastName
+     * @param coachingPosition
+     * @param yearsExperience
+     */
     public Coach(String firstName, String lastName, String coachingPosition, int yearsExperience) {
         setFirstName(firstName.trim());
         setLastName(lastName.trim());
@@ -16,15 +22,18 @@ public class Coach {
         setYearsExperience(yearsExperience);
     }
 
+    //get the value of the first name for Coach
     public String getFirstName() {
         return firstName;
     }
 
+    //setting the name for the coach
     public void setFirstName(String firstName) {
         firstName = firstName.trim();
+        //if the text box is left blank it will throw an exception
         if (firstName.isEmpty()) {
             throw new IllegalArgumentException("You must input a name to continue");
-        } else {
+        } else { //if its not blank it will check to make sure the first name is between 1 - 50 digits
             if(firstName.length() > 2 && firstName.length() < 30) {
                 this.firstName = firstName;
             }
@@ -34,16 +43,19 @@ public class Coach {
         }
     }
 
+    //gets value of last name for the coach
     public String getLastName() {
         return lastName;
     }
 
+    //Set the value for the last name
     public void setLastName(String lastName) {
         lastName = lastName.trim();
+        //if the string is left empty it will throw an exception
         if(lastName.isEmpty()) {
             throw new IllegalArgumentException("You must input a name to continue");
         }
-        else {
+        else { // if its not empty it will check to see that it is in between 2-50 digits
             if(lastName.length() > 2 && lastName.length() < 30) {
                 this.lastName = lastName;
             }
@@ -53,27 +65,32 @@ public class Coach {
         }
     }
 
+    //gets the value for the years of experience for the coach
     public int getYearsExperience() {
         return yearsExperience;
     }
 
+    //sets the value for years of experience for the coach
     public void setYearsExperience(int yearsExperience) {
+        //if it's not in between 0 and 50 it will throw an exception
         if(yearsExperience > 0 && yearsExperience < 50) {
             this.yearsExperience = yearsExperience;
         }
         else {
-            throw new IllegalArgumentException("Coaches must have 0 to 50 years of experience");
+            throw new IllegalArgumentException("Coaches must have 1 to 50 years of experience");
         }
     }
 
+    //gets the value for the coaching position
     public String getCoachingPosition() {
         return coachingPosition;
     }
 
+    //if the coaching position is left empty it will throw an exception
     public void setCoachingPosition(String coachingPosition) {
         if(coachingPosition.isEmpty()) {
             throw new IllegalArgumentException("Coaching position cannot be empty");
-        }
+        }//it checks to see that it is one of the valid options
         else {
             if (getValidCoachingPositions().contains(coachingPosition.toLowerCase())) {
                 this.coachingPosition = coachingPosition;
@@ -84,7 +101,6 @@ public class Coach {
     }
 
     /**
-     *
      * @return valid list for coaching positions
      */
     public static List<String> getValidCoachingPositions() {
