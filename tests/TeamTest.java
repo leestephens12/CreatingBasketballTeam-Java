@@ -15,7 +15,7 @@ public class TeamTest {
 
     @BeforeEach
     void setUp() {
-        goldenState = new Team("Warriors", "Golden State");
+        //goldenState = new Team("Warriors", "Golden State");
         nickNurse = new Coach("Nick", "Nurse","head coach", 5);
         kyleLowry = new Player("Kyle", "Lowry", 179, 225, "pg");
     }
@@ -32,54 +32,5 @@ public class TeamTest {
         coachResult.add(nickNurse);
     }
 
-    @Test
-    void setTeamNameEmpty() {
-        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamName(""));
-    }
-
-    @Test
-    void setTeamNameShort() {
-        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamName("G"));
-    }
-
-    @Test
-    void setTeamNameLong() {
-        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamName("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"));
-    }
-
-    @Test
-    void setTeamNameSpaced() {
-        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamName(" G "));
-    }
-
-    @Test
-    void setTeamLocationEmpty() {
-        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamLocation(""));
-    }
-
-    @Test
-    void setTeamLocationShort() {
-        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamLocation("G"));
-    }
-
-    @Test
-    void setTeamLocationLong() {
-        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamLocation("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"));
-    }
-
-    @Test
-    void setTeamLocationSpaced() {
-        assertThrows(IllegalArgumentException.class, ()-> goldenState.setTeamLocation(" S "));
-    }
-
-    @Test
-    void setTeamName() {
-            assertEquals("Warriors", goldenState.getTeamName());
-    }
-
-    @Test
-    void setTeamLocation() {
-        assertEquals("Golden State", goldenState.getTeamLocation());
-    }
 
 }

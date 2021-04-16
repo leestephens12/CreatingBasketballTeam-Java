@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="348.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.addPlayerController">
+<AnchorPane prefHeight="348.0" prefWidth="348.0" stylesheets="@addCoach.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.addPlayerController">
    <children>
       <Label fx:id="lblAddPlayer" layoutX="14.0" layoutY="24.0" text="Add New Player">
          <font>
@@ -75,7 +75,8 @@
          </children>
       </VBox>
       <Button layoutX="13.0" layoutY="249.0" mnemonicParsing="false" onAction="#addNewPlayer" text="Add" />
-      <Button layoutX="77.0" layoutY="249.0" mnemonicParsing="false" onAction="#clearInformation" text="Clear" />
-      <Label fx:id="lblError" layoutX="154.0" layoutY="253.0" text="label" />
+      <Button layoutX="67.0" layoutY="249.0" mnemonicParsing="false" onAction="#clearInformation" text="Clear" />
+      <Label fx:id="lblError" layoutX="19.0" layoutY="288.0" text="label" />
+      <Button layoutX="122.0" layoutY="249.0" mnemonicParsing="false" onAction="#backBtn" text="Roster" />
    </children>
 </AnchorPane>

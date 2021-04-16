@@ -1,38 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.teamRosterController">
    <children>
-      <AnchorPane prefHeight="456.0" prefWidth="532.0">
+      <AnchorPane prefHeight="335.0" prefWidth="544.0" stylesheets="@addCoach.css">
          <children>
-            <Label fx:id="teamRosterLbl" layoutX="27.0" layoutY="23.0" text="Team Roster">
+            <Label fx:id="teamRosterLbl" layoutX="23.0" layoutY="36.0" text="Team Roster">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <VBox layoutX="27.0" layoutY="59.0">
+            <VBox layoutX="19.0" layoutY="77.0">
                <children>
                   <Label fx:id="playersLbl" text="Players" />
                   <ListView fx:id="lstViewPlayers" prefHeight="200.0" prefWidth="215.0" />
-                  <Button mnemonicParsing="false" onAction="#addPlayerbtn" text="Add Player" />
+                  <Button mnemonicParsing="false" onAction="#addPlayerbtn" text="Add Player">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></Button>
                </children>
             </VBox>
-            <VBox layoutX="260.0" layoutY="59.0">
+            <VBox layoutX="258.0" layoutY="77.0">
                <children>
                   <Label fx:id="coachingStaffLbl" text="Coaching Staff" />
                   <ListView fx:id="lstViewCoaches" prefHeight="200.0" prefWidth="215.0" />
-                  <Button mnemonicParsing="false" onAction="#addCoachbtn" text="Add Coach" />
+                  <Button mnemonicParsing="false" onAction="#addCoachbtn" text="Add Coach">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></Button>
                </children>
             </VBox>
+            <VBox layoutX="20.0" layoutY="419.0" />
+            <VBox layoutX="144.0" layoutY="415.0" />
+            <HBox layoutX="35.0" layoutY="36.0" />
          </children>
       </AnchorPane>
    </children>

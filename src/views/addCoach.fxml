@@ -10,14 +10,14 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="260.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.addCoachController">
+<AnchorPane fx:id="anchorPaneAddCoach" prefHeight="288.0" prefWidth="378.0" stylesheets="@addCoach.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.addCoachController">
    <children>
       <Label fx:id="lblAddCoach" layoutX="14.0" layoutY="14.0" text="Add a Coach">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <VBox layoutX="14.0" layoutY="51.0">
+      <VBox fx:id="vboxlbl" layoutX="14.0" layoutY="51.0">
          <children>
             <Label fx:id="lblFirstName" prefHeight="8.0" prefWidth="58.0" text="First name:" />
             <Label fx:id="lblLastName" text="Last name:">
@@ -57,7 +57,9 @@
             </TextField>
          </children>
       </VBox>
-      <Button layoutX="14.0" layoutY="191.0" mnemonicParsing="false" onAction="#addNewCoach" text="Add" />
-      <Button layoutX="65.0" layoutY="191.0" mnemonicParsing="false" onAction="#clearInformation" text="Clear" />
+      <Button fx:id="addBtn" layoutX="14.0" layoutY="191.0" mnemonicParsing="false" onAction="#addNewCoach" text="Add" />
+      <Button fx:id="clearBtn" layoutX="65.0" layoutY="191.0" mnemonicParsing="false" onAction="#clearInformation" text="Clear" />
+      <Button layoutX="116.0" layoutY="191.0" mnemonicParsing="false" onAction="#backBtn" text="Roster" />
+      <Label fx:id="lblError" layoutX="19.0" layoutY="232.0" text="Label" />
    </children>
 </AnchorPane>
